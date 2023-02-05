@@ -807,6 +807,7 @@ body {
     border-radius: 50%;
     display: block;
     margin-left: auto;
+    margin-bottom: 24px;
     transition: background-color 250ms linear, fill 250ms linear;
     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -834,13 +835,18 @@ body {
     letter-spacing: var(--letter-spacing);
     color: var(--modal-title-text-color);
     text-align: center;
-    padding-top: 24px;
     padding-bottom: 14px;
 }
 
 .modal-form {
     
 }
+
+.modal-field {
+    margin-bottom: 16px;
+}
+
+
 
 .modal-form-label {
     display: flex;
@@ -854,16 +860,51 @@ body {
     color: var(--modal-form-input-color);
 }
 
+.input-title {
+    padding-bottom: 4px;
+}
+
 .checkbox {
     display: block;
+}
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+
 }
 
 .modal-form-input {
     display: flex;
     flex-direction: column;
     height: 40px;
+    width: 100%;
+    padding-left: 38px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
+
+.modal-form-input::placeholder {
+    padding-left: 4px;
+    padding-top: 8px;
+}
+
+.input-wrap:is(:hover, :focus)  {
+    border: 1px solid #4D5AE5;
+    border-radius: 4px;
+    color: #4D5AE5;
+    fill: #4D5AE5;
+}
+
+.modal-icon {
+    position: absolute;
+    margin-left: 16px;
 }
 
 .comment {
@@ -874,28 +915,47 @@ body {
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
-    color: rgba(117, 117, 117, 0.5);
+    color: #000000;
 }
 
-.checkbox {
+.comment:is(:hover, :focus) {
+    border: 1px solid #4D5AE5;
+}
+
+.modal-check {
+
+}
+
+.check-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    color: #757575;
     display: flex;
-    flex-direction: inherit;
-    padding-top: 16px;
-    padding-bottom: 24px;
-    gap: 4px;
 }
 
-.modal-form-aform {
-    
+.check-text::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    margin-right: 8px;
+    transition: background-color 300ms linear;
 }
 
-.checkbox-text {
-    padding-left: 4px;
+.modal-check:checked + .check-text::before {
+    background-color: #404BBF;
+    border: none;
+    background-image: url(../images/check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.checkbox-pp {
-    color: #4D5AE5;
-    text-decoration: underline;
+.policy {
+    margin-left: 4px;
 }
 
 .send-btn {
