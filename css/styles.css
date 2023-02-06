@@ -606,6 +606,7 @@ body {
 
 .footer-email:is(:hover, :focus) {
     border: 1px solid #4D5AE5;
+    color: #FFFFFF;
 }
 
 .subscribe-btn {
